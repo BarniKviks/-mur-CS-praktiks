@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Runtime.Serialization;
-
+using System.Text;
 
 namespace Serialize_People
 {
-    [Serializable]
+  [Serializable]
     class Person : IDeserializationCallback
-    {
+  {
         public string name;
         public DateTime dateOfBirth;
-        [NonSerialized] public int age;
+    [NonSerialized] public int age;
 
         public Person(string _name, DateTime _dateOfBirth)
         {
@@ -40,14 +39,13 @@ namespace Serialize_People
                 age--;
             }
         }
-        // C#
-        void IDeserializationCallback.OnDeserialization(Object sender)
-        {
-            // ѕосле десериализации вычисл€ем возраст 
-            CalculateAge();
-            Console.WriteLine("calc");
-        }
-
+    // C#
+    void IDeserializationCallback.OnDeserialization(Object sender)
+    {
+      // ѕосле десериализации вычисл€ем возраст 
+      CalculateAge();
+      Console.WriteLine("CalculateAge");
     }
 
+  }
 }
